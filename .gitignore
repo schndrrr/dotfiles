@@ -1,2 +1,3 @@
 # Ignore local environment settings
 .zshrc_local
+/.tmux/plugins
