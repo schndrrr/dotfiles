@@ -1,0 +1,17 @@
+return {
+  { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
+  "numToStr/Comment.nvim",
+  "windwp/nvim-autopairs",
+  "lewis6991/gitsigns.nvim",
+  "tpope/vim-fugitive",
+  {'akinsho/git-conflict.nvim', version = "*", config = true},
+  'ThePrimeagen/vim-be-good'
+}

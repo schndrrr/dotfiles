@@ -1,0 +1,85 @@
+{
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1740150044694
+	},
+	"activeProjects": {
+		"/Users/johann.schneider/Documents/Projects/digitalwert-middleware": "dw-erp-42",
+		"/Users/johann.schneider/Documents/Uni/sem_4/scrumbags-for-life/webapp": "cisum-musicstore",
+		"/Users/johann.schneider/kz-tourney/kz-tournament": "vnl-winter-tournament"
+	},
+	"adminsdkconfig": {
+		"dw-erp-42": {
+			"projectId": "dw-erp-42",
+			"databaseURL": "https://dw-erp-42.firebaseio.com",
+			"storageBucket": "dw-erp-42.appspot.com",
+			"locationId": "us-central"
+		},
+		"gg-prices": {
+			"projectId": "gg-prices",
+			"databaseURL": "https://gg-prices.firebaseio.com",
+			"storageBucket": "gg-prices.appspot.com",
+			"locationId": "europe-west"
+		},
+		"abl-uids-5dc8b": {
+			"projectId": "abl-uids-5dc8b",
+			"storageBucket": "abl-uids-5dc8b.appspot.com"
+		}
+	},
+	"webconfig": {
+		"dw-erp-42": {
+			"projectId": "dw-erp-42",
+			"databaseURL": "https://dw-erp-42.firebaseio.com",
+			"storageBucket": "dw-erp-42.appspot.com",
+			"locationId": "us-central",
+			"apiKey": "AIzaSyBwbr-xvHumnMkWD-5gr-qrbsAEOr31djc",
+			"authDomain": "dw-erp-42.firebaseapp.com",
+			"messagingSenderId": "47223568278"
+		},
+		"abl-uids-5dc8b": {
+			"projectId": "abl-uids-5dc8b",
+			"appId": "1:845590736856:web:729cebcc28aff3aba1ccad",
+			"storageBucket": "abl-uids-5dc8b.appspot.com",
+			"apiKey": "AIzaSyCEqlfqTjt6AAdoVBeBUi6zKBtuQi7Aoa0",
+			"authDomain": "abl-uids-5dc8b.firebaseapp.com",
+			"messagingSenderId": "845590736856"
+		}
+	},
+	"additionalAccounts": [],
+	"activeAccounts": {},
+	"usage": true,
+	"analytics-uuid": "f4880889-d543-4ae1-be81-729930cc6e71",
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "107551676690825051437",
+		"email": "johann.schneider90@hotmail.de",
+		"email_verified": true,
+		"at_hash": "1RLbPHitQXcoi3dFoFA_iw",
+		"iat": 1734087931,
+		"exp": 1734091531
+	},
+	"tokens": {
+		"expires_at": 1740166954951,
+		"refresh_token": "1//09Jc1JFBTMSJVCgYIARAAGAkSNwF-L9Ir3931jpjZeq-mcYOTmFlTuCTyPlnTpNEg6QNhQVcR0ThsD6L_RKG5bfXURv0wPBey9fo",
+		"scopes": [
+			"email",
+			"https://www.googleapis.com/auth/cloud-platform",
+			"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+			"https://www.googleapis.com/auth/firebase",
+			"openid"
+		],
+		"access_token": "ya29.a0AXeO80ToHKd_Tva5XFOIZebdg0Rnvc-2-deL6puJvFu1xYwSqEuT8rlk9RzM-LKhxLBZGrqI_gFm7VgfIZrqwASxz02y0cna4AqEClv3ZJuYtiGdcFnA3P-8xSZ_8Y6SxoJJShrGGYYDH2Di9me5SaUeDITcweVZZNumJqwiwrC_VsCMaCgYKAbMSARISFQHGX2MiI8qHjNiZ5Qf-FfZZ1nKUlA0183",
+		"expires_in": 3599,
+		"scope": "https://www.googleapis.com/auth/firebase openid https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/cloud-platform",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkMTJhYjc4MmNiNjA5NjI4NWY2OWU0OGFlYTk5MDc5YmI1OWNiODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA3NTUxNjc2NjkwODI1MDUxNDM3IiwiZW1haWwiOiJqb2hhbm4uc2NobmVpZGVyOTBAaG90bWFpbC5kZSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiVjA4X3dlMWNONndsU0JIZWZFWlRoUSIsImlhdCI6MTc0MDE2MzM1NSwiZXhwIjoxNzQwMTY2OTU1fQ.lldvv7EJzQnhyMLgmKln3Kym5kWd7oQLfW6dSLEp1IlJxLL5C1HK04QaeWRxtDD4x8QRgVWMLDVXQkI1OdOhjDNYlv4R_LpRF9p_mxaHtLRve5Yj9TVDLgMMAwnd_BObYLarFAGGmajRrZx6tTXhxxUReo9rQFFxwIRCQCkmXTrYYkZdEt5-_lA-JnN0zmUlAcA1GAJyy48SjMdSbQlXsrbr-VEwzk0omyPeNHzF_0qNII_nh9qbPksFZzSNZVKf9sd_F8ZlhEDaq6W2mnyKZ-fuy8xbVA2q12c2Ao187_E8z_5hz6WwRXPwbeY6w2sj98wGKK0S3p8mBgkdpXF-gQ"
+	}
+}
