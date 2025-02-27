@@ -1,3 +1,5 @@
 # Ignore local environment settings
 .zshrc_local
 /.tmux/plugins
+.config/gatsby
+.vscode/extensions

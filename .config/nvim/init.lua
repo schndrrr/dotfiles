@@ -68,9 +68,6 @@ vim.keymap.set("n", "<leader>F", function()
   vim.lsp.buf.format({ async = true })
 end, { noremap = true, silent = true, desc = "Format current buffer" })
 
-vim.keymap.set("n", "gt", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "gT", ":BufferLineCyclePrev<CR>")
-
 -- ========= nvim-cmp Setup =========
 local cmp = require("cmp")
 
