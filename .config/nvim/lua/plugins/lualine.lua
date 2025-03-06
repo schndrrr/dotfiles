@@ -5,6 +5,12 @@ return {
     require('lualine').setup({
       options = {
         theme = "ayu_mirage"
+      },
+      sections = {
+        lualine_c = {{
+          "filename",
+          path = 1
+        }}
       }
     })
   end

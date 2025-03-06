@@ -40,10 +40,12 @@ alias gp='git push'
 alias uio='npm start'
 alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
 alias gpo='git push --set-upstream origin'
+alias python=python3
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 eval $(thefuck --alias)
 
@@ -73,3 +75,6 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 if [ -f ~/.zshrc_local ]; then
   source ~/.zshrc_local
 fi
+
+# Created by `pipx` on 2025-02-28 10:06:48
+export PATH="$PATH:/Users/johann.schneider/.local/bin"
