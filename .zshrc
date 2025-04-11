@@ -31,6 +31,7 @@ alias whatsmyip='curl ipecho.net/plain ; echo'
 alias gs='git status'
 alias nq='networkQuality'
 alias gcn='git checkout -b'
+alias gcnh='branch-creator'
 alias gcom='git commit -m'
 alias ccr='npm run clean && clear && npm start'
 alias 'ssh?'='history | grep "ssh " | grep @ | grep -v "history"'
@@ -79,3 +80,5 @@ fi
 
 # Created by `pipx` on 2025-02-28 10:06:48
 export PATH="$PATH:/Users/johann.schneider/.local/bin"
+export PATH="$PATH:/Users/johann.schneider/.dotnet/tools"
+. "$HOME/.cargo/env"
