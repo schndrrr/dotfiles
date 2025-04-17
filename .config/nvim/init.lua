@@ -50,7 +50,6 @@ vim.opt.splitbelow = true
 -- codecompanion
 vim.keymap.set("n", "<leader>Z", ":CodeCompanionActions<CR>")
 
--- Mini.Map
 
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 -- "jk" im Insert-Modus -> ESC
@@ -62,11 +61,6 @@ vim.keymap.set("n", "J", "5j", { noremap = true })
 -- "K" im Normal-Modus -> 5 Zeilen nach oben
 vim.keymap.set("n", "K", "5k", { noremap = true })
 
-vim.keymap.set("t", "jk", "<C-\\><C-n>", { noremap = true, silent = true })
-
-vim.keymap.set("n", "<leader>F", function()
-  vim.lsp.buf.format({ async = true })
-end, { noremap = true, silent = true, desc = "Format current buffer" })
 
 -- ========= nvim-cmp Setup =========
 local cmp = require("cmp")
@@ -93,42 +87,4 @@ cmp.setup({
     { name = "path" },     -- optional: Dateipfade, wenn du tippen willst
   }),
 })
-
-
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
--- Standardmässige on_attach-Funktion (z. B. Keymaps)
-local on_attach = function(client, bufnr)
-  -- Hier könntest du z. B. Tastenbelegungen machen:
-  local opts = { noremap = true, silent = true, buffer = bufnr }
-  -- Gehe zur Definition
-  vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, noremap = true, silent = true })
-  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = bufnr, noremap = true, silent = true })
-  vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, noremap = true, silent = true })
-  -- etc.
-end
-
--- "Verbesserte" Capabilities für Autocompletion
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
-
--- Python Setup (Pyright)
-lspconfig.pyright.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
--- Lua Setup
-lspconfig.lua_ls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = { -- typisches Lua "neovim" Setup
-    Lua = {
-      diagnostics = { globals = { "vim" } },
-    },
-  },
-})
-
 
