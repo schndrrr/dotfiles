@@ -18,6 +18,7 @@ vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<leader>r", ":b#<CR>")
 require("lazy").setup("plugins")
 -- ========== Plugin-Konfiguration ==========
 -- Beispiel: Comment
@@ -62,6 +63,7 @@ vim.keymap.set("n", "J", "5j", { noremap = true })
 vim.keymap.set("n", "K", "5k", { noremap = true })
 
 
+
 -- ========= nvim-cmp Setup =========
 local cmp = require("cmp")
 
@@ -88,3 +90,16 @@ cmp.setup({
   }),
 })
 
+local wk = require("which-key")
+vim.api.nvim_create_autocmd({"LspAttach"}, {
+  callback = function()
+    wk.register({
+      g = {
+        name = "Goto",
+        d = { vim.lsp.buf.definition, "Go to definition" },
+        r = { require("telescope.builtin").lsp_references,
+          "Open a telescope window with references" },
+      },
+    }, { buffer = 0 })
+  end
+})

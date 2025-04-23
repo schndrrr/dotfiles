@@ -24,13 +24,7 @@ return
 
       local capabilities = cmp_nvim_lsp.default_capabilities()
       local on_attach = function(client, bufnr)
-        local opts = { noremap = true, silent = true, buffer = bufnr }
-        -- Gehe zur Definition
-        vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, noremap = true, silent = true })
-        -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = bufnr, noremap = true, silent = true })
-        vim.keymap.set("n", "gi", "<cmd>Telescope lsp_references<CR>",opts)
-        -- vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, noremap = true, silent = true })
+
       end
 
       vim.diagnostic.config({ virtual_text = true })
@@ -43,7 +37,7 @@ return
       })
 
     -- "Verbesserte" Capabilities für Autocompletion
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+      local capabilities = cmp_nvim_lsp.default_capabilities()
 
 
     -- Python Setup (Pyright)

@@ -1,5 +1,18 @@
 # Ignore local environment settings
 .zshrc_local
-/.tmux/plugins
+
 .config/gatsby
-.vscode/extensions
+.config/flipperdevices.com
+.config/flutter
+.config/ranger
+.config/firebase
+.config/configstore
+.config/iterm2
+.config/lftp
+.config/thefuck
+.config/fish
+
+.vscode
+.git/
+
+.DS_Store
