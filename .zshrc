@@ -83,3 +83,6 @@ fi
 export PATH="$PATH:/Users/johann.schneider/.local/bin"
 export PATH="$PATH:/Users/johann.schneider/.dotnet/tools"
 . "$HOME/.cargo/env"
+
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)

@@ -14,19 +14,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
-vim.keymap.set("n", "<leader>r", ":b#<CR>")
 require("lazy").setup("plugins")
 -- ========== Plugin-Konfiguration ==========
--- Beispiel: Comment
 require("Comment").setup()
--- Beispiel: nvim-autopairs
 require("nvim-autopairs").setup {}
 
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 vim.opt.termguicolors = true
 
 -- ========== Sonstige Neovim-Einstellungen ==========
@@ -50,18 +42,17 @@ vim.opt.splitbelow = true
 
 -- codecompanion
 vim.keymap.set("n", "<leader>Z", ":CodeCompanionActions<CR>")
-
-
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
--- "jk" im Insert-Modus -> ESC
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true })
-
--- "J" im Normal-Modus -> 5 Zeilen nach unten
 vim.keymap.set("n", "J", "5j", { noremap = true })
-
--- "K" im Normal-Modus -> 5 Zeilen nach oben
 vim.keymap.set("n", "K", "5k", { noremap = true })
-
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<leader>r", ":b#<CR>")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 
 -- ========= nvim-cmp Setup =========
