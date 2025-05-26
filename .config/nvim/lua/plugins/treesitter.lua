@@ -8,6 +8,7 @@ return
         highlight = {
           enable = true,                             -- Enable syntax highlighting
           additional_vim_regex_highlighting = false, -- Use Tree-sitter only
+          disable = { "latex", },
         },
         indent = {
           enable = true, -- Enable Tree-sitter-based indentation

@@ -12,7 +12,7 @@ source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /Users/johann.schneider/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 export NVM_DIR="$HOME/.nvm" 
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
@@ -21,9 +21,9 @@ autoload -Uz compinit && compinit
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:/Users/johann.schneider/Applications/Flutter/flutter/bin"
+export PATH="$PATH:$HOME/Applications/Flutter/flutter/bin"
 
-export ANDROID_HOME="/Users/johann.schneider/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 alias ..='cd ..'
 alias weather='curl https://wttr.in/Dresden'
@@ -54,14 +54,14 @@ eval $(thefuck --alias)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/johann.schneider/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/johann.schneider/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/johann.schneider/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/johann.schneider/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -80,9 +80,17 @@ if [ -f ~/.zshrc_local ]; then
 fi
 
 # Created by `pipx` on 2025-02-28 10:06:48
-export PATH="$PATH:/Users/johann.schneider/.local/bin"
-export PATH="$PATH:/Users/johann.schneider/.dotnet/tools"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.dotnet/tools"
 . "$HOME/.cargo/env"
 
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
