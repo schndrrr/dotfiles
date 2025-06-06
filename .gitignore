@@ -1,6 +1,7 @@
 # Ignore local environment settings
 .zshrc_local
 
+/Audio
 .config/gatsby
 .config/flipperdevices.com
 .config/flutter

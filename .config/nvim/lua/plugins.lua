@@ -13,5 +13,5 @@ return {
   "lewis6991/gitsigns.nvim",
   "tpope/vim-fugitive",
   {'akinsho/git-conflict.nvim', version = "*", config = true},
-  'ThePrimeagen/vim-be-good'
+  'ThePrimeagen/vim-be-good',
 }

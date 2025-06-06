@@ -52,8 +52,10 @@ vim.opt.splitbelow = true
 
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true })
-vim.keymap.set("n", "J", "5j", { noremap = true })
-vim.keymap.set("n", "K", "5k", { noremap = true })
+
+-- Disable this for a while so i can build better habbits
+-- vim.keymap.set("n", "J", "5j", { noremap = true })
+-- vim.keymap.set("n", "K", "5k", { noremap = true })
 
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
