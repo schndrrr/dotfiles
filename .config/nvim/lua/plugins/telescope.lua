@@ -18,7 +18,12 @@ return {
       "<Leader>g",
       "<cmd>Telescope live_grep<cr>",
       desc = "live grep files"
-    }
+    },
+    {
+      "<Leader>cc",
+      "<cmd>Telescope colorscheme<cr>",
+      desc = "Change Colorscheme on the fly"
+    },
   },
   config = function()
     require("telescope").setup({
