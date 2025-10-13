@@ -46,6 +46,9 @@ alias gco='git checkout $(git branch --all | fzf)'
 alias python=python3
 alias jjl='jj log --limit 10'
 alias ssh='ggh'
+alias cd='z'
+
+
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
@@ -98,3 +101,6 @@ esac
 # pnpm end
 
  export PATH=$PATH:$(go env GOPATH)/bin
+ 
+ # ZOXIDE
+ eval "$(zoxide init zsh)"

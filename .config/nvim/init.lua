@@ -107,7 +107,12 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 			g = {
 				name = "Goto",
 				d = { vim.lsp.buf.definition, "Go to definition" },
-				r = { require("telescope.builtin").lsp_references, "Open a telescope window with references" },
+				r = {
+					function()
+						require("snacks").picker.lsp_references()
+					end,
+					"Open a picker window with references",
+				},
 			},
 		}, { buffer = 0 })
 	end,

@@ -11,6 +11,7 @@ return {
 			strategies = {
 				chat = {
 					adapter = "anthropic",
+					-- adapter = "openaioos",
 					slash_commands = {
 						["file"] = {
 							callback = "strategies.chat.slash_commands.file",
@@ -34,6 +35,18 @@ return {
 					adapter = "anthropic",
 				},
 			},
+      -- adapters = {
+      --   openaioos = function()
+      --     return require('codecompanion.adapters').extend('ollama', {
+      --       name = 'openaioos', -- Give this adapter a different name to differentiate it from the default ollama adapter
+      --       schema = {
+      --         model = {
+      --           default = 'gpt-oss:20b',
+      --         },
+      --       },
+      --     })
+      --   end,
+      -- },
 			display = {
 				action_palette = {
 					width = 95,
@@ -47,6 +60,26 @@ return {
 				},
 			},
 			extensions = {
+				context_manager = {
+					enabled = true,
+					opts = {
+						max_tokens = 200000, -- Match your model's context window
+						warning_threshold = 0.75, -- Warn at 75%
+						critical_threshold = 0.85, -- Critical at 85%
+						show_context_window = true,
+						show_notifications = true,
+						-- Progress bar styles: "blocks", "ascii", "minimal", "detailed", "bar_only"
+						progress_style = "bar_only",
+						-- Window position: "bottom", "top", "top-right", "bottom-right", "center"
+						window_position = "bottom-right",
+						keymaps = {
+							check_context = "gcc",
+							summarize_chat = "gcs",
+							start_fresh_with_summary = "gcf",
+							toggle_context = "tt", -- Toggle context window
+						},
+					},
+				},
 				mcphub = {
 					callback = "mcphub.extensions.codecompanion",
 					opts = {

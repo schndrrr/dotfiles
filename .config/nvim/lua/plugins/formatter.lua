@@ -33,6 +33,7 @@ return {
         c           = { 'clang_format' },
         cpp         = { 'clang_format' },
         sql         = { 'sql_formatter' },
+        vue         = { 'prettier' },
       },
     }
   end,
