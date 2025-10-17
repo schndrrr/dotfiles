@@ -2,6 +2,7 @@
 .zshrc_local
 
 /Audio
+.config/raycast
 .config/gatsby
 .config/flipperdevices.com
 .config/flutter

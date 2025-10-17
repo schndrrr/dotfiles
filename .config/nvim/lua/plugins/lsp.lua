@@ -44,7 +44,6 @@ return {
 				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 			})
 
-			-- VUE_LS basic config (relays ts requests to vtsls)
 			lspconfig.vue_ls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
