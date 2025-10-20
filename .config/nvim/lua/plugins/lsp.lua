@@ -1,8 +1,8 @@
 return {
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^6", -- Recommended
-		lazy = false, -- This plugin is already lazy
+		version = "^6",
+		lazy = false,
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -13,44 +13,50 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-			local mason_registry = require("mason-registry")
 
 			require("mason").setup()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "vtsls", "vue_ls" },
+				ensure_installed = { "lua_ls", "vtsls", "pyright" },
 				automatic_installation = true,
+				handlers = {
+					function(server_name)
+						lspconfig[server_name].setup({})
+					end,
+				},
 			})
 
 			local capabilities = cmp_nvim_lsp.default_capabilities()
-			local on_attach = function(client, bufnr) end
+
+			local on_attach = function(client, bufnr)
+				local opts = { buffer = bufnr, silent = true }
+				vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, opts)
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+			end
 
 			vim.diagnostic.config({ virtual_text = true })
-			vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
 
-			local vue_language_server_path = vim.fn.stdpath("data")
-				.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
-			local vue_plugin = {
-				name = "@vue/typescript-plugin",
-				location = vue_language_server_path,
-				languages = { "vue" },
-				configNamespace = "typescript",
-			}
 			lspconfig.vtsls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
-				init_options = {
-					plugins = { vue_plugin },
-				},
 				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+				settings = {
+					vtsls = {
+						tsserver = {
+							globalPlugins = {
+								{
+									name = "@vue/typescript-plugin",
+									location = vim.fn.stdpath("data")
+										.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+									languages = { "vue" },
+								},
+							},
+						},
+					},
+				},
 			})
 
-			lspconfig.vue_ls.setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				-- more config can be added if needed
-			})
-
-			-- Existing setups...
 			lspconfig.pyright.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
@@ -60,7 +66,9 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
-					Lua = { diagnostics = { globals = { "vim" } } },
+					Lua = {
+						diagnostics = { globals = { "vim" } },
+					},
 				},
 			})
 		end,
