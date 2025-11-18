@@ -68,7 +68,7 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 vim.keymap.set("n", "<leader>Z", ":CodeCompanionActions<CR>")
 vim.keymap.set("n", "<leader>r", ":b#<CR>")
--- vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 vim.keymap.set("n", "zR", require("ufo").openAllFolds)
